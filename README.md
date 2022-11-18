@@ -1,2 +1,2 @@
-# kredoinc_fe
-REST API Challenge | front-end
+# kredoinc
+REST API Challenge
