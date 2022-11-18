@@ -1,0 +1,19 @@
+  2 # dependencies
+    3 /node_modules
+    4 /.pnp
+    5 .pnp.js
+    6
+    7 # testing
+    8 /coverage
+    9
+   10 # next.js
+   11 /.next/
+   12 /out/
+   13
+   14 # production
+   15 /build
+   16
+   17 # misc
+   18 .DS_Store
+   19 *.pem
+   
