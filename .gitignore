@@ -2,7 +2,7 @@
 
 
 front-end/node_modules/
-back-end/node_modules/
+nodejs_back-end/node_modules/
 /.pnp
 pnp.js
 
