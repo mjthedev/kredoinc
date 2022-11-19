@@ -5,7 +5,7 @@
 
 
 
-class Product {
+export default class Product {
 
     // const this.name;
    // const this.price;
@@ -15,37 +15,38 @@ class Product {
         this.name = name;
         this.price = price;
         this.description = description;
+
       };
 
 
     
 
 
-function getProductById(request) {
+getProductById(request) {
     // fetch product from database using the param property from the request object
     // send stringified data to front-end client
     // after the initial get request make sure the to cache the data locally
     
 };
 
-function addProduct(request) {
+addProduct(request) {
     // take the parameters from the body of the request 
     // destructure the values
     // add to database using mongodb driver
 
 };
 
-function updateProduct(req) {
+updateProduct(req) {
 
 };
 
 
-function deleteProduct(req) {
+deleteProduct(req) {
 
 };
 
 
-function showAllProducts() {
+showAllProducts() {
 
     // showAll products from database
     // use query database function 
@@ -58,4 +59,3 @@ function showAllProducts() {
 
 };
 
-module.exports = Product;
