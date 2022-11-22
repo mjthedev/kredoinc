@@ -1,12 +1,25 @@
 import express from 'express';
 const router  = express();
 import Product from '../services/Products/products.js';
+import {connection} from '../models/database/db.js';
 
 
 
 
-router.get('/allProducts', (req, res) => {
+
+
+router.get('/categories', (req, res) => {
+  
+// connection.connect();
+
+  
+})
+
  
+router.get('/allProducts', async (req, res) => {
+
+        
+    
   console.log('allProducts route working');
    // Product(req);
    // once the function above is done running 
@@ -16,6 +29,11 @@ router.get('/allProducts', (req, res) => {
 });
 
 router.post('/addProduct', (req, res) => {
+
+
+
+
+
 
      console.log('addProduct route working');
 
@@ -30,6 +48,8 @@ router.post('/addProduct', (req, res) => {
 
 router.put('/updateProduct', (req, res) => {
 
+   
+
      console.log('updateProduct route working');
 
 //    Products.updateProduct(req);
@@ -42,6 +62,11 @@ router.put('/updateProduct', (req, res) => {
 
 router.delete('/deleteProduct', (req, res) => {
 
+
+
+    
+
+
      console.log('deleteProduct route working');
 
 //    Products.deleteProduct(req);
@@ -51,6 +76,10 @@ router.delete('/deleteProduct', (req, res) => {
  //   res.send('refresh the page');
 
 });
+
+
+
+
 
 
 export { router } 
