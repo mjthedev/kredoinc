@@ -1,26 +1,37 @@
 import express from 'express';
 const router  = express();
 import Product from '../services/Products/products.js';
-import {connection} from '../models/database/db.js';
+import {connection} from '../models/database/db.js'
 
 
 
 
+router.get('/category', (req, res) => {
 
 
-router.get('/categories', (req, res) => {
+  // this will get all the categories
+
+connection.connect(function(err) {
+  if(err) {
+    console.error(err)
+  }
   
-// connection.connect();
 
-  
+  connection.query('SELECT BIN_TO_UUID(id) AS id, Name, Price, Description, category_id FROM products', function (err, result) {
+    if(err) {
+      console.error(err);
+    }
+
+    console.log(result);
+    res.send(JSON.stringify(result));
+    
+    
+  });
+
 })
 
- 
-router.get('/allProducts', async (req, res) => {
+  
 
-        
-    
-  console.log('allProducts route working');
    // Product(req);
    // once the function above is done running 
    // we can refresh the page with the res parameter
@@ -28,14 +39,39 @@ router.get('/allProducts', async (req, res) => {
 
 });
 
-router.post('/addProduct', (req, res) => {
+router.post('/category/:id', (req, res) => {
+
+
+
+  // this will get all the products inside a category
+
+
+  connection.connect(function(err) {
+    if(err) {
+      console.error(err)
+    }
+    
+  
+    connection.query(`SELECT BIN_TO_UUID(id) AS id, Name, Price, Description, category_id FROM products WHERE category_id = ${req.params.id}`, function (err, result) {
+      if(err) {
+        console.error(err);
+      }
+  
+      console.log(result);
+      res.send(JSON.stringify(result));
+      
+      
+    });
+  
+  })
+  
 
 
 
 
-
-
-     console.log('addProduct route working');
+    // const data = req.params.id
+    //  console.log('category by id route working');
+    //  res.send(data)
 
  //   Products.addProduct(req);
    // once the function above is done running 
@@ -46,38 +82,41 @@ router.post('/addProduct', (req, res) => {
 });
 
 
-router.put('/updateProduct', (req, res) => {
 
-   
+router.post('/product/:id', (req, res) => {
 
-     console.log('updateProduct route working');
+  // this will get the details of a product
 
-//    Products.updateProduct(req);
-   // once the function above is done running 
-   // we can refresh the page with the res parameter
+
+  connection.connect(function(err) {
+    if(err) {
+      console.error(err)
+    }
+    
+  
+    connection.query(`SELECT BIN_TO_UUID(id) AS id, Name, Price, Description, category_id FROM products HAVING id = "${req.params.id}"`, function (err, result) {
+      if(err) {
+        console.error(err);
+      }
+  
+      console.log(result);
+      res.send(JSON.stringify(result));
+      
+      
+    });
+  
+  })
+  
+
+  
+
+//   Products.addProduct(req);
+ // once the function above is done running 
+ // we can refresh the page with the res parameter
 //    res.send('refresh the page');
 
-});
-
-
-router.delete('/deleteProduct', (req, res) => {
-
-
-
-    
-
-
-     console.log('deleteProduct route working');
-
-//    Products.deleteProduct(req);
-
-    // once the function above is done running
-    // we can refresh the page with the res parameter
- //   res.send('refresh the page');
 
 });
-
-
 
 
 
