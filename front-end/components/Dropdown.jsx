@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
 import Products from './Products';
+import styles from '../styles/Home.module.css'
 
 import {
     DropdownToggle,
@@ -16,17 +17,18 @@ const Dropdown = () => {
   return (
 
     <>
-    <UncontrolledDropdown>
+    <UncontrolledDropdown className={styles.dropdown_style}>
       <DropdownToggle
         caret
         color="dark"
         id="dropdownMenuButton"
         type="button"
+        
       >
         Categories
       </DropdownToggle>
 
-      <DropdownMenu aria-labelledby="dropdownMenuButton">
+      <DropdownMenu  aria-labelledby="dropdownMenuButton">
         <DropdownItem href="#pablo" onClick={() => {
             console.log('All Button Clicked')
            

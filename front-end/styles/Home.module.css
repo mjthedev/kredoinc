@@ -5,11 +5,14 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr)
+}
+
+.dropdown_style {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 100px;
 }
 
 .footer {
@@ -43,6 +46,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  margin-bottom: 200px;
 }
 
 .title,
@@ -54,6 +58,11 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.text {
+  font-size: 8px;
+  color: white
 }
 
 .code {

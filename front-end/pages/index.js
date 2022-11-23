@@ -74,27 +74,22 @@ export default function Home({data}) {
 
       </Head>
 
-      <main className={styles.main}>
         <h1 className={styles.title}>
         RESTful API Challenge
         </h1>
+        <Dropdown/>
+      <main className={styles.main}>
 
-<Dropdown></Dropdown>
-
-
-
-        
-
-    {data.map(item => {
-     return(
-      <Products 
-        id={item.id}
-        Name={item.Name} 
-        Price={item.Price} 
-        Description={item.Description}>
-      </Products>
-     )
-    })}
+          {data.map(item => {
+          return(
+            <Products 
+              id={item.id}
+              Name={item.Name} 
+              Price={item.Price} 
+              Description={item.Description}>
+            </Products>
+          )
+          })}
 
         
       </main>
