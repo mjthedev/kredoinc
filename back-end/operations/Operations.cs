@@ -6,7 +6,7 @@ namespace Ops {
 
 	public class Operations
 	{
-    public static GetAllCategories(string)
+    static GetAllCategories()
 		{
             return "GetAllCategories method working";
 		}
