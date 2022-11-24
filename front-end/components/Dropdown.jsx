@@ -30,6 +30,7 @@ const Dropdown = () => {
 
       <DropdownMenu  aria-labelledby="dropdownMenuButton">
         <DropdownItem href="#pablo" onClick={() => {
+            
             console.log('All Button Clicked')
            
         }}>

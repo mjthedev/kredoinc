@@ -5,7 +5,7 @@ import Products from './Products'
 
 
 export const getStaticProps = async () => {
-    const res = await fetch('http://localhost:9000/api/category/3')
+    const res = await fetch('http://localhost:9000/api/category/1')
     const data = await res.json();
     
    
@@ -18,8 +18,8 @@ export const getStaticProps = async () => {
 
    
 
-export default function ShoesProducts ({data}) {
-    // console.log(data)
+export default function ShirtsProducts ({data}) {
+    console.log(data)
   return (
     
 

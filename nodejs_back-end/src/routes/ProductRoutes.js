@@ -39,7 +39,7 @@ connection.connect(function(err) {
 
 });
 
-router.post('/category/:id', (req, res) => {
+router.get('/category/:id', (req, res) => {
 
 
 
@@ -83,7 +83,7 @@ router.post('/category/:id', (req, res) => {
 
 
 
-router.post('/product/:id', (req, res) => {
+router.get('/product/:id', (req, res) => {
 
   // this will get the details of a product
 
