@@ -1,7 +1,6 @@
 ﻿using System;
 
 
-using Ops;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +28,17 @@ app.MapGet("/api/category", () =>
 {
 
 
-    GetAllCategories();
+    IDictionary<int, string> d = new Dictionary<int, string>();
+    d.Add(new KeyValuePair<int, string>(1, "TVs"));
+    d.Add(new KeyValuePair<int, string>(2, "Appliances"));
+    d.Add(new KeyValuePair<int, string>(3, "Mobile"));
+    d.Add(new KeyValuePair<int, string>(4, "Tablet"));
+    d.Add(new KeyValuePair<int, string>(5, "Laptop"));
+    d.Add(new KeyValuePair<int, string>(6, "Desktop"));
+    d.Add(new KeyValuePair<int, string>(7, "Hard Drive"));
+    d.Add(new KeyValuePair<int, string>(8, "Flash Drive"));
+
+    return d;
 });
 
 //app.MapGet("/api/category/{id}", Ops.Operations.GetCategory);
