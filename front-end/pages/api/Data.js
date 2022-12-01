@@ -9,7 +9,6 @@ export default class ProductGiver {
   }
 
 async  showData() {
-
   await axios.get('http://localhost:9000/api/category')
    .then(function(response) {
      // handle response
@@ -17,9 +16,7 @@ async  showData() {
    
      // console.log(JSON.stringify(data[0]))
      // const finalData = JSON.stringify(data[0].Name)
- 
      // console.log(finalData)
- 
      return data;
    }).catch(function(err){
      // handle error

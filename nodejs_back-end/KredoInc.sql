@@ -52,8 +52,8 @@ USE kredoinc;
 -- SELECT BIN_TO_UUID(id) AS ID, Name, Price, Description, category_id FROM products;  
 -- SELECT * FROM products
 
-SELECT BIN_TO_UUID(id) AS ID, Name, Price, Description, category_id FROM products
-WHERE category_id = 1;
+-- SELECT BIN_TO_UUID(id) AS ID, Name, Price, Description, category_id FROM products
+-- WHERE category_id = 1;
 
 
 -- SELECT BIN_TO_UUID(products.id) AS ID, products.Name, products.Price, products.Description, products.category_id FROM products

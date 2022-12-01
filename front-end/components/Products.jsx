@@ -16,7 +16,7 @@ const Products = (props) => {
 
           onClick={()=> {
             Product.showProductById(props.id)
-            console.log()
+            
           }}
           
           // onClick={async (e)=> {

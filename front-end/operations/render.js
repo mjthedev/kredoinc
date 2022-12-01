@@ -22,7 +22,6 @@ export default function renderConditionalComponent(validateAll, validateShirts, 
               
               // this function will return the product selected given the id
               Product.showProductById(item.id)
-              
               // showProductById(item.id)
               
             }}>

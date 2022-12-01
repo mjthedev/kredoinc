@@ -18,35 +18,6 @@ import renderConditionalComponent from '../operations/render';
 
 
 
-export const getStaticProps = async () => {
-  const all = await fetch('http://localhost:9000/api/category')
-  const shirts = await fetch('http://localhost:9000/api/category/1')
-  const pants = await fetch('http://localhost:9000/api/category/2')
-  const shoes = await fetch('http://localhost:9000/api/category/3')
-  // const product = await fetch('http://localhost:9000/api/product/16a1be78-69fe-11ed-801b-d4a9d32642db')
-  
-  
-  const allData = await all.json();
-  const allShirts = await shirts.json();
-  const allPants = await pants.json();
-  const allShoes = await shoes.json();
-  // const theProduct = await product.json();
- 
-  return {
-   props: {
-     allData,
-     allShirts,
-     allPants,
-     allShoes,
-    //  theProduct
-   }
-  }
- }
- 
-
-
-
-
 
 export default function Home({
   allData, 
@@ -112,7 +83,7 @@ const [allShoesData, setAllShoesData] = useState(false);
 
   return (
    
-           <div className={styles.container}>
+     <div className={styles.container}>
       <Head>
         <title>RESTful API Challenge</title>
         <meta name="description" content="RESTful API Challenge" />
@@ -127,19 +98,19 @@ const [allShoesData, setAllShoesData] = useState(false);
         {/* <Dropdown  State = {state} Data = {allData} Shirts ={allShirts} Pants = {allPants} Shoes = {allShoes} /> */}
       <button className='btn' onClick={() => {
         showAll();
-        console.log(allProductData)
+        // console.log(allProductData)
       }}>All</button>
       <button className='btn' onClick={() => {
         showShirts();
-        console.log(allShirtsData)
+        // console.log(allShirtsData)
       }}>Shirts</button>
       <button className='btn' onClick={() => {
         showPants();
-        console.log(allPantsData)
+        // console.log(allPantsData)
       }}>Pants</button>
       <button className='btn' onClick={() => {
         showShoes();
-        console.log(allShoesData)
+        // console.log(allShoesData)
       }}>Shoes</button>
       <main className={styles.main}>
       
@@ -173,44 +144,35 @@ const [allShoesData, setAllShoesData] = useState(false);
 
 
 
+// The getStaticProps function will make all the api calls
+// and store the data in a variable so we can add the to our component props later
 
-
-// async function getStaticProps() {
-
-//   try {
-//     const result = await axios.get('http://localhost:9000/api/category');
-//     const data = await result.data;
-//     return {data}
-//   } catch (error) {
-//     console.log(error)
-//   }
-
+export const getStaticProps = async () => {
+  const all = await fetch('http://localhost:9000/api/category')
+  const shirts = await fetch('http://localhost:9000/api/category/1')
+  const pants = await fetch('http://localhost:9000/api/category/2')
+  const shoes = await fetch('http://localhost:9000/api/category/3')
+  // const product = await fetch('http://localhost:9000/api/product/16a1be78-69fe-11ed-801b-d4a9d32642db')
   
-
-
-
-  // axios.get('http://localhost:9000/api/category').then((response) => {
-
-  //   // console.log(response.data);
-  //   const apiData = response.data;
-  //   console.log(apiData);
-    
   
-  // }).catch((err) => {
-  //   console.error(err)
-  // }).finally(function() {
-  //   // execution expected
-    
-    
-  // })
+  const allData = await all.json();
+  const allShirts = await shirts.json();
+  const allPants = await pants.json();
+  const allShoes = await shoes.json();
+  // const theProduct = await product.json();
+ 
+  return {
+   props: {
+     allData,
+     allShirts,
+     allPants,
+     allShoes,
+    //  theProduct
+   }
+  }
+ }
+ 
 
-// }
-
-
-// getStaticProps().then((data) => {
-//   console.log(data)
-  
-// })
 
 
 
